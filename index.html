@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<!--  //////////image flipper//////////////-->
+<style>
+#container {
+  height: 1024px;
+  width: 768px;
+  position: relative;
+}
+#image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#text {
+  z-index: 50;
+  position: absolute;
+  color: white;
+  font-size: 100px;
+  left: 600px;
+  top: 175px;
+}
+</style>
+<head>
+      <title>change picture</title>
+      <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 5000);
+          }
+  ///image variables          
+          var images = [], x = -1;
+          images[0] = "http://cdn1.matadornetwork.com/blogs/1/2014/06/Ichetuckneefireflies.jpg";
+          images[1] = "https://www.pacsafe.com/blog/wp-content/uploads/2013/07/376088076_d62329f8e9_o-1024x768.jpg";
+           images[2] = "https://c1.staticflickr.com/6/5597/15008078584_3c5a3b9d3f_b.jpg";
+          images[3] = "https://s-media-cache-ak0.pinimg.com/originals/f6/72/b4/f672b4592af9ff461c7a7586d4f12d7d.jpg";
+          images[4] = "https://c1.staticflickr.com/4/3042/2642726952_d3a68bfef3_b.jpg";
+      </script>
+   </head>
+<style>
+  body { background-color: black; }
+  </style>
+  <div id="container">
+   <body onload = "startTimer()">
+       <img id="img" src="https://c1.staticflickr.com/4/3042/2642726952_d3a68bfef3_b.jpg" hspace="200"  />
+   </body>
+ <p id="text">
+    Florida springs
+  </p>
+
+</div>
+
+
+<!-- ///////////////end image flipper////////////////-->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("http://www.mrwallpaper.com/wallpapers/forest-trees-waterfall.jpg");
+    min-height: 90%;
+}
+</style>
+<body>
+
+<!-- ////////////Navbar (sit on top)///////////// -->
+<div class="w3-top w3-hide-small">
+  <ul class="w3-navbar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#menu">LOCATIONS</a></li>
+    <li><a href="#about">ABOUT</a></li>
+  </ul>
+</div>
+  
+
+
+<!-- ////////////Menu Container////////////// -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE LOCATIONS</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Springs');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Springs</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Magnitude');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Magnitude</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Search');">
+        
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Search</div>
+  <!--////search////////-->
+           <form action="search.html" method="GET">
+          <!-- radio buttons choose which table to search-->
+            <input type="radio" name="radio" value="Springs">Springs
+            <input type="radio" name="radio" value="County">County
+            <input type="radio" name="radio" value="Park">Park
+
+        <input type="text" name="query" />
+        <input type="submit" name="submit" value="Search" />
+    </form>
+      </a>
+    </div>
+  <!--//// list of springs///-->
+    <div id="Springs" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Wakulla Springs</b> <span class="w3-right w3-tag w3-dark-grey w3-round">1st Magnitude</span></h1>
+      <p class="w3-text-grey">465 Wakulla Park Dr, Crawfordville, FL 32327</p>
+      <hr>
+   
+    </div>
+  <!--//// magnitude of springs///-->
+    <div id="Magnitude" class="w3-container menu w3-padding-32 w3-white">
+     <h1><b>Springs are classified by magnitude (from one to eight) on the basis of their volume of flow, or discharge of water.
+      <hr>
+     
+       <h1><b>Magnitude 1</b> <span class="w3-right w3-tag w3-dark-grey w3-round">100 cubic feet per second or more</span></h1>
+       
+      <hr>
+      
+        <h1><b>Magnitude 2</b> <span class="w3-right w3-tag w3-dark-grey w3-round">10 to 100 cubic feet per second</span></h1>
+  
+      <hr>
+      
+        <h1><b>Magnitude 3</b> <span class="w3-right w3-tag w3-dark-grey w3-round">1 to 10 cubic feet per second</span></h1>
+    
+      <hr>
+      
+        <h1><b>Magnitude 4</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.223 to 1 cubic feet per second</span></h1>
+    
+      <hr>
+      
+        <h1><b>Magnitude 5</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.0223 to 0.223 cubic feet per second</span></h1>
+    
+      <hr>
+      
+        <h1><b>Magnitude 6</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.0022 to 0.0223 cubic feet per second</span></h1>
+     
+      <hr>
+      
+        <h1><b>Magnitude 7</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.00028 to 0.0022 cubic feet per second</span></h1>
+     
+      <hr>
+      
+        <h1><b>Magnitude 8</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.00028 cubic feet per second or less</span></h1>
+    
+      <hr>
+
+    </div>
+
+
+    <div id="Search" class="w3-container menu w3-padding-32 w3-white">
+      
+    </div><br>
+
+  </div>
+</div>
+
+<!-- /////////About Container ////////////-->
+<!--<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">-->
+  <div class="w3-container w3-padding-64 w3-green w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+    <p>Springs continue to attract people with their unique beauty. They have provided immeasurable natural, recreational and economic benefits for residents and visitors for more than a century. More than a dozen Florida state parks protect the springs for which they are named. Florida’s springs serve as windows to the mysteries of the Floridan Aquifer, as home for diverse wildlife communities and as recreation sites for many residents and visitors.</p>
+  
+    <p>ichetucknee springs</p>
+    <img src="http://girlsguidetotravel.tv/wp-content/uploads/2015/12/IMG_0153.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+
+
+
+<!-- ///////Contact (with google maps)////// -->
+<div id="googleMap" class="w3-grayscale-max" style="width:100%;height:400px;"></div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- ///////////Add Google map/////////////// -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+// Google Map Location center tallahassee
+var myCenter = new google.maps.LatLng(30.4382559, -84.2807329);
+
+
+function initialize() {
+var mapProp = {
+  center: myCenter,
+  zoom: 12,
+  scrollwheel: true,
+  draggable: true,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position: myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-green";
+}
+document.getElementById("myLink").click();
+</script>
+
+<!-- //////////Footer//////////////// -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <p>
+</footer>
+
+ 
+</body>
+</html>
