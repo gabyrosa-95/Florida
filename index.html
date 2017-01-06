@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<!--  //////////image flipper//////////////-->
-<style>
-#container {
-  height: 1024px;
-  width: 768px;
-  position: relative;
-}
-#image {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-#text {
-  z-index: 50;
-  position: absolute;
-  color: white;
-  font-size: 100px;
-  left: 600px;
-  top: 175px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>Florida Springs</title>
+
+<!-- ///////////////Nav Bar//////////////-->
 <head>
-      <title>change picture</title>
+<div id="tabs25">
+  <ul>
+    <li><a href="#" title="css menus" class="current">Home</a></li>
+    <li><a href="#menu" title="css menus">Locations</a></li>
+    <li><a href="#about" title="css menus">About</a></li>
+  </ul>
+</div>
+
+
+<!--  //////////image flipper//////////////-->
+  <title>change picture</title>
       <script type = "text/javascript">
           function displayNextImage() {
               x = (x === images.length - 1) ? 0 : x + 1;
@@ -47,8 +39,8 @@
           images[4] = "https://c1.staticflickr.com/4/3042/2642726952_d3a68bfef3_b.jpg";
       </script>
    </head>
-<style>
-  body { background-color: black; }
+  <style>
+    body { background-color: black; }
   </style>
   <div id="container">
    <body onload = "startTimer()">
@@ -60,113 +52,104 @@
 
 </div>
 
-
-<!-- ///////////////end image flipper////////////////-->
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
-<style>
-body, html {height: 100%}
-body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
-.menu {display: none}
-.bgimg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("http://www.mrwallpaper.com/wallpapers/forest-trees-waterfall.jpg");
-    min-height: 90%;
-}
-</style>
+<!-- ////////////Tabbed Menu Container////////////// -->
 <body>
+<ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Springs')">Springs</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Magnitude')">Magnitude</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Search')">Search</a></li>
+</ul>
 
-<!-- ////////////Navbar (sit on top)///////////// -->
-<div class="w3-top w3-hide-small">
-  <ul class="w3-navbar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <li><a href="#">HOME</a></li>
-    <li><a href="#menu">LOCATIONS</a></li>
-    <li><a href="#about">ABOUT</a></li>
-  </ul>
-</div>
-  
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
-<!-- ////////////Menu Container////////////// -->
-<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
-  <div class="w3-content">
-  
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE LOCATIONS</h1>
-    <div class="w3-row w3-center w3-border w3-border-dark-grey">
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Springs');" id="myLink">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Springs</div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Magnitude');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Magnitude</div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Search');">
-        
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-green">Search</div>
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
   <!--////search////////-->
-           <form action="search.html" method="GET">
-          <!-- radio buttons choose which table to search-->
-            <input type="radio" name="radio" value="Springs">Springs
-            <input type="radio" name="radio" value="County">County
-            <input type="radio" name="radio" value="Park">Park
 
+     <form action="search.php" method="GET">
+          <!-- radio buttons choose which table to search-->
+        <div class="radio-toolbar">
+            <input type="radio" id ="radio1" name="radio" value="Springs" >
+            <label for="radio1">Springs</label>
+
+            <input type="radio" id ="radio2" name="radio" value="County">
+            <label for="radio2">county</label>
+
+            <input type="radio" id="radio3" name="radio" value="Park">
+            <label for="radio3">Park</label>
+        </div>
+        
         <input type="text" name="query" />
         <input type="submit" name="submit" value="Search" />
     </form>
       </a>
     </div>
   <!--//// list of springs///-->
-    <div id="Springs" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Wakulla Springs</b> <span class="w3-right w3-tag w3-dark-grey w3-round">1st Magnitude</span></h1>
-      <p class="w3-text-grey">465 Wakulla Park Dr, Crawfordville, FL 32327</p>
+    <div id="Springs" class="tabcontent">
+      <h1><b>Wakulla Springs</b> 1st Magnitude</h1>
+      <p >465 Wakulla Park Dr, Crawfordville, FL 32327</p>
       <hr>
    
     </div>
   <!--//// magnitude of springs///-->
-    <div id="Magnitude" class="w3-container menu w3-padding-32 w3-white">
+    <div id="Magnitude" class="tabcontent">
      <h1><b>Springs are classified by magnitude (from one to eight) on the basis of their volume of flow, or discharge of water.
       <hr>
      
-       <h1><b>Magnitude 1</b> <span class="w3-right w3-tag w3-dark-grey w3-round">100 cubic feet per second or more</span></h1>
+       <h2><b>Magnitude 1       </b> 100 cubic feet per second or more </h2>
        
       <hr>
       
-        <h1><b>Magnitude 2</b> <span class="w3-right w3-tag w3-dark-grey w3-round">10 to 100 cubic feet per second</span></h1>
+        <h2><b>Magnitude 2       </b> 10 to 100 cubic feet per second</h2>
   
       <hr>
       
-        <h1><b>Magnitude 3</b> <span class="w3-right w3-tag w3-dark-grey w3-round">1 to 10 cubic feet per second</span></h1>
+        <h2><b>Magnitude 3       </b> 1 to 10 cubic feet per second</h2>
     
       <hr>
       
-        <h1><b>Magnitude 4</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.223 to 1 cubic feet per second</span></h1>
+        <h2><b>Magnitude 4       </b> 0.223 to 1 cubic feet per second</h2>
     
       <hr>
       
-        <h1><b>Magnitude 5</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.0223 to 0.223 cubic feet per second</span></h1>
+        <h2><b>Magnitude 5       </b> 0.0223 to 0.223 cubic feet per second</h2>
     
       <hr>
       
-        <h1><b>Magnitude 6</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.0022 to 0.0223 cubic feet per second</span></h1>
+        <h2><b>Magnitude 6       </b> 0.0022 to 0.0223 cubic feet per second</h2>
      
       <hr>
       
-        <h1><b>Magnitude 7</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.00028 to 0.0022 cubic feet per second</span></h1>
+        <h2><b>Magnitude 7       </b> 0.00028 to 0.0022 cubic feet per second</h2>
      
       <hr>
       
-        <h1><b>Magnitude 8</b> <span class="w3-right w3-tag w3-dark-grey w3-round">0.00028 cubic feet per second or less</span></h1>
+        <h2><b>Magnitude 8       </b> 0.00028 cubic feet per second or less</h2>
     
       <hr>
 
     </div>
 
 
-    <div id="Search" class="w3-container menu w3-padding-32 w3-white">
+    <div id="Search" class="tabcontent">
       
     </div><br>
 
@@ -174,10 +157,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 </div>
 
 <!-- /////////About Container ////////////-->
-<!--<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">-->
-  <div class="w3-container w3-padding-64 w3-green w3-xlarge" id="about">
-  <div class="w3-content">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+  <div  id="about">
+  <div >
+   
+
+    <h3 >About</h3>
     <p>Springs continue to attract people with their unique beauty. They have provided immeasurable natural, recreational and economic benefits for residents and visitors for more than a century. More than a dozen Florida state parks protect the springs for which they are named. Florida’s springs serve as windows to the mysteries of the Floridan Aquifer, as home for diverse wildlife communities and as recreation sites for many residents and visitors.</p>
   
     <p>ichetucknee springs</p>
@@ -242,9 +226,7 @@ document.getElementById("myLink").click();
 </script>
 
 <!-- //////////Footer//////////////// -->
-<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
-  <p>
-</footer>
+
 
  
 </body>
