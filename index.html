@@ -1,6 +1,123 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+/*--------------import font---------------------*/
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+  body{
+    font-family: 'Amatic SC', cursive;
+  }
+  head{
+    font-family: 'Amatic SC', cursive;
+  }
+
+
+/*--------------------nav bar-----------------------*/
+#tabs25{position:relative;display:block;height:42px;font-size:24px;font-weight:bold;background:transparent url(images/blueslate_background.gif) repeat-x top left;}
+#tabs25 ul{margin:0px;padding:0;list-style-type:none;width:auto;}
+#tabs25 ul li{display:block;float:left;margin:0 1px 0 0;}
+#tabs25 ul li a{display:block;float:left;color:#D5F1FF;text-decoration:none;padding:14px 22px 0 22px;height:28px;}
+#tabs25 ul li a:hover,#tabs25 ul li a.current{color:#fff;background:transparent url(images/blueslate_backgroundOVER.gif) no-repeat top center;}
+
+/*-------------------image filpper-------------------*/
+#container {
+  height: 1024px;
+  width: 768px;
+  position: relative;
+}
+#image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#text {
+  z-index: 50;
+  position: absolute;
+  color: white;
+  font-size: 100px;
+  left: 600px;
+  top: 175px;
+}
+/*---------------------tabbed menu----------------*/
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;
+text-align: center;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 34px;
+    text-align: center;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/*------------------radio buttons-------------*/
+.radio-toolbar input[type="radio"] {
+    display:none;
+}
+
+.radio-toolbar label {
+    display:inline-block;
+    background-color:#ddd;
+    padding:4px 11px;
+    font-size:20px;
+    color:blue;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:#bbb;
+}
+/*-------------------list of springs----------------*/
+ h1{
+      text-align:center;
+      color:white;
+    }
+    p{
+      text-align:center;
+      color:white;
+
+    }
+
+ /*---------------------- about container---------------*/
+  h3{
+        font-size: 55px;
+        text-align:center;
+        color:white;
+      }
+      p{
+          font-size: 30px;
+      }
+</style>
+
+
 <title>Florida Springs</title>
 
 <!-- ///////////////Nav Bar//////////////-->
